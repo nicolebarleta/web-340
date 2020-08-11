@@ -2,7 +2,7 @@
 WEB340-330H Node.js (2211-DD)
 
 # contributors
-Professor Krasso - Bell
+Professor Krasso - Bellevue University
 
 Professor Massoud - Bellevue University
 
