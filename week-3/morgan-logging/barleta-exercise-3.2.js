@@ -2,7 +2,7 @@
 ============================================
 ; Title:  barleta-exercise-3.2.js
 ; Author: Professor Krasso
-; Date:   28 February 2019
+; Date:   23 August 2020
 ; Modified by: Marie Nicole Barleta
 ; Description: Demonstrates how to configure the
 ;              Morgan logger
