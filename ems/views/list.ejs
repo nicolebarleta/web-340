@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ("header") %>
+
+  <body>
+
+    <div role="main" class="container" style="width: 50%;">
+      <br /><br />
+
+      <style type="text/css">
+        #employee tbody tr:hover {
+          cursor: pointer;
+          background-color: #ffff99;
+        }
+      </style>
+    </head>
+    <body>
+
+    <div id="emps"></div>
+
+    </div>
+    <%- include ("scripts") %>
+    <script type="text/javascript">
+
+
+      $(function () {
+        $("table tr").click(function () {
+          var id = $(this).find('td:first').html();
+          getEmployee(id);
+        })
+      });
+
+
+    function employee(id, firstName, lastName, title) {
+
+    this.id = id;
+
+    this.firstName = firstName;
+
+    this.lastName = lastName;
+
+    this.title = title;
+
+    }
+
+      var employee = [
+        {id: 1, firstName: 'Thomas', lastName:'Edison', title:'Software Engineer'},
+        {id: 2, firstName: 'Benjamin', lastName:'Franklin', title:'Programmer'},
+        {id: 3, firstName: 'Nikola', lastName:'Tesla', title:'Product Manager'},
+        {id: 4, firstName: 'Charles', lastName:'Babbage', title:'Product Manager'},
+        {id: 5, firstName: 'Alexander', lastName:'Bell', title:'Business Analyst'},
+      ];
+
+    function getEmployee(id){
+      for (var x = 0; x < employee.length; x++){
+        if(employee[x].id == id){
+        return alert(employee[x].id +" " + employee[x].firstName + " " + employee[x].lastName + " "+ employee[x].title)
+        }
+      }
+
+    }
+    var output=
+    "<h1>Employee Listing</h1>"+"<table id=\"employee\">" + "<th> ID</th>" + "<th> First Name </th>"+ "<th> Last Name</th>" + "<th> Title </th>" + "<tbody>"
+    for (var x = 0; x < employee.length; x++) {
+        output += "<tr>" +
+           "<td>"+employee[x].id +"</td>" +
+          "<td>" + employee[x].firstName +"</td>"+
+          "<td>" + employee[x].lastName +"</td>"+
+          "<td>" + employee[x].title +"</td>"+
+          "</tr>";
+    }
+    output += "</table>";
+
+    document.getElementById('emps').innerHTML = output
+
+    </script>
+  </body>
+</html>
