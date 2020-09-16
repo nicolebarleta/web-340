@@ -1,0 +1,11 @@
+{
+  "name": "status-code",
+  "author": "Professor Krasso",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0"
+  }
+}
