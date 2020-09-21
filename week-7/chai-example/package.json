@@ -1,0 +1,13 @@
+{
+  "name": "status-code",
+  "author": "Professor Krasso",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
+  },
+  "scripts":{
+    "test": "mocha"
+  }
+}
