@@ -15,6 +15,7 @@ var mongoose = require("mongoose");
 
 // mLab connection
 var mongoDB = "mongodb+srv://admin:1234@buwebdev-cluster-1.gexte.mongodb.net/ems";
+
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
