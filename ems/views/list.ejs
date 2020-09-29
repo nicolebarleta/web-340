@@ -1,79 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ("header") %>
+  <%- include ('header') -%>
+
+
 
   <body>
+    <%- include ('navbar') -%>
 
-    <div role="main" class="container" style="width: 50%;">
-      <br /><br />
+    <br /> <br />
+  <div id="employee_lists" class="container text-center">
 
-      <style type="text/css">
-        #employee tbody tr:hover {
-          cursor: pointer;
-          background-color: #ffff99;
-        }
-      </style>
-    </head>
-    <body>
+      <h2>Employee Records</h2><br />
+    <table class="table table-dark">
+      <tr>
+        <th>EmpID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Job Title</th>
+      </tr>
+      <tbody>
+        <% if(employees.length) { %>
+          <% var i = 101; %>
+          <% employees.forEach(function(employee) {%>
 
-    <div id="emps"></div>
+            <tr>
+              <th><%=i %></th>
+              <td><%=employee.firstName %></td>
+              <td><%=employee.lastName %></td>
+              <td><%=employee.title %></td>
+            </tr>
+            <%i++; %>
+            <% }); %>
+          <% } %>
+      </tbody>
+    </table>
+    <a href="/new"><button id="addEmployeesBtn" class="btn btn-primary"> Add Employee</button></a>
 
-    </div>
-    <%- include ("scripts") %>
-    <script type="text/javascript">
+  </div>
 
-
-      $(function () {
-        $("table tr").click(function () {
-          var id = $(this).find('td:first').html();
-          getEmployee(id);
-        })
-      });
-
-
-    function employee(id, firstName, lastName, title) {
-
-    this.id = id;
-
-    this.firstName = firstName;
-
-    this.lastName = lastName;
-
-    this.title = title;
-
-    }
-
-      var employee = [
-        {id: 1, firstName: 'Thomas', lastName:'Edison', title:'Software Engineer'},
-        {id: 2, firstName: 'Benjamin', lastName:'Franklin', title:'Programmer'},
-        {id: 3, firstName: 'Nikola', lastName:'Tesla', title:'Product Manager'},
-        {id: 4, firstName: 'Charles', lastName:'Babbage', title:'Product Manager'},
-        {id: 5, firstName: 'Alexander', lastName:'Bell', title:'Business Analyst'},
-      ];
-
-    function getEmployee(id){
-      for (var x = 0; x < employee.length; x++){
-        if(employee[x].id == id){
-        return alert(employee[x].id +" " + employee[x].firstName + " " + employee[x].lastName + " "+ employee[x].title)
-        }
-      }
-
-    }
-    var output=
-    "<h1>Employee Listing</h1>"+"<table id=\"employee\">" + "<th> ID</th>" + "<th> First Name </th>"+ "<th> Last Name</th>" + "<th> Title </th>" + "<tbody>"
-    for (var x = 0; x < employee.length; x++) {
-        output += "<tr>" +
-           "<td>"+employee[x].id +"</td>" +
-          "<td>" + employee[x].firstName +"</td>"+
-          "<td>" + employee[x].lastName +"</td>"+
-          "<td>" + employee[x].title +"</td>"+
-          "</tr>";
-    }
-    output += "</table>";
-
-    document.getElementById('emps').innerHTML = output
-
-    </script>
+    <%- include ('footer') -%>
+    <%- include ('scripts') -%>
 
   </body>
+
 </html>

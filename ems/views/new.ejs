@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ("header") %>
+  <%- include ('header') -%>
 
 <body>
-<%- include ("navbar") %>
+  <%- include ('navbar') -%>
+  <main>
+<div class="container new">
+  <br /><h2>Add Employee</h2>
 
-<div role="main" class="container" style="width: 50%;">
-  <br /><br />
+  <form method="post" action="/process" >
 
-  <h2>-- Employees Entry Page --</h2>
-    <form method="post" action="/process">
-        <div class="form-group">
-          <label for="txtName">Name:</label>
-          <input type="text" class="form-control" id="txtName" name="txtName" />
-        </div>
-
-        <div class="form-group">
-
-          <button type="submit" class="btn btn-secondary float-right">
-            Submit
-          </button>
-        </div>
-      </form>
-
-      <br /><br />
-
-      <a href="/list">Return to Employees</a>
+    <div class="form-group">
+      <input type="firstName" name="firstName" class="form-control" id="firstName" placeholder="Enter First Name">
     </div>
-    <%- include ("footer") %>
-    <%- include ("scripts") %>
-  </body>
+    <div class="form-group">
+      <input type="lastName" name="lastName" class="form-control" id="lastName" placeholder="Enter Last Name">
+    </div>
+
+    <div class="form-group">
+      <input type="title" name="title" class="form-control" id="jobTitle" placeholder="Enter Job Title">
+    </div>
+
+
+    <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
+    <button type="submit" class="btn btn-outline-primary text-center">Add Employee</button>
+  </form>
+</div>
+</main>
+<%- include ('footer') -%>
+</body>
+
 </html>
