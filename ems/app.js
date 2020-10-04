@@ -143,7 +143,47 @@ app.post('/process', function(req, res) {
 });
 
 
+app.get("/view/:firstName/:lastName/:title", function (request, response) {
 
+  var firstName = request.params.firstName;
+  var lastName = request.params.lastName;
+  var title = request.params.title;
+
+  console.log(firstName);
+  console.log(lastName);
+  console.log(title);
+  Employee.find({
+    'firstName': firstName,
+    'lastName': lastName,
+    'title': title
+  },
+     function(error, employee) {
+
+      if (error) throw error;
+
+      console.log(employee);
+
+      if (employee.length > 0) {
+
+          response.render("view", {
+
+              title: "Employee Record",
+              active: "view",
+              employee: employee
+
+          })
+
+      }
+
+      else {
+
+          response.redirect("/list")
+
+      }
+
+  });
+
+});
 
 
 // Creates a new Node.js server and listens on local port 8080.

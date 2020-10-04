@@ -20,6 +20,7 @@
       </tr>
       <tbody>
         <% if(employees.length) { %>
+          <a href="/new"><button id="addEmployeesBtn" class="btn btn-primary"> Add Employee</button></a><br /><br />
           <% var i = 101; %>
           <% employees.forEach(function(employee) {%>
 
@@ -28,13 +29,14 @@
               <td><%=employee.firstName %></td>
               <td><%=employee.lastName %></td>
               <td><%=employee.title %></td>
+              <td><a href="/view/<%= employee.firstName %>/<%= employee.lastName %>/<%= employee.title %>">VIEW</a></td>
             </tr>
             <%i++; %>
             <% }); %>
           <% } %>
       </tbody>
     </table>
-    <a href="/new"><button id="addEmployeesBtn" class="btn btn-primary"> Add Employee</button></a>
+
 
   </div>
 
