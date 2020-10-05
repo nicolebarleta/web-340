@@ -72,6 +72,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+//css
+app.use(express.static(__dirname + '/public'));
+
 //statements
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');

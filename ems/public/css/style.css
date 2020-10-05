@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  color: white;
+  background-image: linear-gradient(to right top, #051937, #343855, #5d5a75, #868096, #b0a8b9);
+  background-attachment: fixed;
+}
+
+.intro{
+  text-align:center;
+  color: white;
+  padding-bottom: 30%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.intro h1{
+  font-family: "Yantramanav", sans-serif;
+  font-size: 480%;
+  font-weight: 700;
+  color: white;
+  line-height: 70%;
+  letter-spacing: .1rem;
+  padding-top: 12rem;
+}
+
+.intro h2 {
+  font-family: "Yantramanav", sans-serif;
+  font-size: 275%;
+  font-weight: 150;
+  color: white;
+  -webkit-text-fill-color: white;
+  line-height: 70%;
+  letter-spacing: .1rem;
+}
+
+.viewBtn{
+  font-family: "Montserrat", sans-serif;
+  font-size: 135%;
+  font-weight: 400;
+  color:white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: solid white;
+  padding: 10px 20px;
+  border-radius: 9px;
+  transition: all 0.5s;
+}
+
+.viewBtn:hover{
+  color:  #5996e5;
+  text-decoration: none;
+  border: solid #5996e5 2px;
+}
+
+.navbar{
+  background-image: linear-gradient(to right top, #051937, #343855, #5d5a75, #868096, #b0a8b9);
+
+}
+
+.navbar a {
+  color:white;
+}
+
+.navbar a:hover{
+  color: black;
+}
